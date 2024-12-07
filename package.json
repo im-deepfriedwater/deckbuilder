@@ -13,6 +13,7 @@
     "@mui/material": "^6.1.10",
     "@mui/material-nextjs": "^6.1.9",
     "@remusao/smaz": "^1.10.0",
+    "dotenv": "^16.4.7",
     "firebase": "^11.0.2",
     "lz-string": "^1.5.0",
     "next": "15.0.4",
@@ -20,10 +21,10 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@types/firebase": "^2.4.32",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/firebase": "^2.4.32",
     "eslint": "^8",
     "eslint-config-next": "15.0.4",
     "postcss": "^8",
