@@ -1,9 +1,5 @@
 "use-server"
-import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { firebaseConfig } from "@/lib/firebase/config";
-import { signIn, signOut } from "next-auth/react";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import UserInfo from "./UserInfo";

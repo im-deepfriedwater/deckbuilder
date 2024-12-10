@@ -1,9 +1,5 @@
 import Image from "next/image";
 import { compressToEncodedURIComponent as compress, decompressFromEncodedURIComponent as decompress } from 'lz-string';
-import { GoogleAuthProvider } from "firebase/auth";
-
-const provider = new GoogleAuthProvider();
-
 export default function Home() {
   
   const compressed = compress(`4xEB01-012

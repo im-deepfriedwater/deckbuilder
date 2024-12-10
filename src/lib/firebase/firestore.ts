@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import {
 	collection,
@@ -15,4 +16,3 @@ import {
 	getFirestore,
 } from "firebase/firestore";
 
-import { db } from "@/lib/firebase/clientApp";

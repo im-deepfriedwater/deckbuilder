@@ -2,33 +2,40 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
-import { getAuthenticatedAppForUser } from "@/lib/firebase/serverApp";
-import { User } from "firebase/auth";
 
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
 
-export default async({
+export const metadata: Metadata = {
+  title: 'Deckbuilder',
+  description: 'A useful way to create and manage TCG decks',
+};
+
+const Layout = async ({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  const authApp = await getAuthenticatedAppForUser();
 
   return (
     <html lang="en">
       <body>
-        <Header initialUser={authApp?.currentUser?.toJSON() as User ?? undefined} />
+        <Header />
         {children}
       </body>
     </html>
   );
 }
+
+export default Layout;
