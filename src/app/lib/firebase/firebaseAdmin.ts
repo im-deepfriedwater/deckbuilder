@@ -1,6 +1,5 @@
-import "server-only";
-
-import admin from "firebase-admin";
+'use server'
+import admin from "firebase-admin"
 
 interface FirebaseAdminAppParams {
   projectId: string;
@@ -10,7 +9,6 @@ interface FirebaseAdminAppParams {
 }
 
 function formatPrivateKey(key: string) {
-  if (!key) return ''
   return key.replace(/\\n/g, "\n");
 }
 
