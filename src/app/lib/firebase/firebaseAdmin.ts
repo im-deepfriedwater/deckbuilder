@@ -12,7 +12,7 @@ function formatPrivateKey(key: string) {
   return key.replace(/\\n/g, "\n");
 }
 
-export function createFirebaseAdminApp(params: FirebaseAdminAppParams) {
+export const createFirebaseAdminApp =  async (params: FirebaseAdminAppParams) => {
   const privateKey = formatPrivateKey(params.privateKey);
 
   if (admin.apps.length > 0) {
@@ -32,7 +32,7 @@ export function createFirebaseAdminApp(params: FirebaseAdminAppParams) {
   });
 }
 
-export async function initAdmin() {
+export const initAdmin = async () => {
   const params = {
     projectId: process.env.NEXT_PUBLIC_PROJECT_ID as string,
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL as string,
