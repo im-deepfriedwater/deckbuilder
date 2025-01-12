@@ -2,7 +2,7 @@
 
 import { compressToEncodedURIComponent as compress, decompressFromEncodedURIComponent as decompress } from 'lz-string'
 
-import { auth, signIn } from '@/auth'
+import { auth } from '@/auth'
 import { SignInButton } from '@/components/SignInButton'
 import { SignOutButton } from '@/components/SignOutButton'
 
@@ -25,6 +25,7 @@ export default async function Home() {
     4xOP08-023
     2xST02-004
     4xST02-007`)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const decompressed = decompress(compressed)
   // console.log(decompressed, Buffer.byteLength(decompressed))
   return (
