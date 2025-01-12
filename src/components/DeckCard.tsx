@@ -10,7 +10,7 @@ const DeckCard = ({ name, deckList, lastUpdated }: DeckProps) => {
 
   const handleClick = async () => {
     await navigator.clipboard.writeText(deckList)
-    setOpen((prev) => !prev);
+    setOpen((prev) => !prev)
   };
 
   const handleClickAway = () => {
