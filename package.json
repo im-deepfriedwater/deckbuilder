@@ -10,16 +10,20 @@
   },
   "dependencies": {
     "@emotion/cache": "^11.13.5",
-    "@mui/material": "^6.1.10",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.3.1",
     "@mui/material-nextjs": "^6.1.9",
     "@remusao/smaz": "^1.10.0",
     "dotenv": "^16.4.7",
     "firebase": "^11.0.2",
+    "firebase-admin": "^13.0.2",
     "lz-string": "^1.5.0",
     "next": "15.0.4",
     "next-auth": "^5.0.0-beta.25",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
     "@types/firebase": "^2.4.32",

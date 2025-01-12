@@ -1,21 +1,30 @@
 'use server'
 
+import Grid from '@mui/material/Grid2'
+import Paper from '@mui/material/Paper';
+import { initAdmin } from '../lib/firebase/firebaseAdmin';
+import { getDecks } from '../lib/firebase/firestore';
+import { Deck } from '@/types';
+import DeckCard from '@/components/DeckCard';
 
+// // eslint-disable-next-line @typescript-eslint/no-unused-vars
+// const decompressed = decompress(compressed)
+// // console.log(decompressed, Buffer.byteLength(decompressed))
 export default async function Decks() {
+  await initAdmin();
+  const decks = await getDecks();
+
+  const renderDeck = () => decks.map(({ name, deckList, lastUpdated, id }: Deck) => (
+    <DeckCard key={id} name={name} deckList={deckList} lastUpdated={lastUpdated} />
+  ))
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          Deckbuilder
-        </h1>
+    <Paper className='m-12 h-[80vh]'>
+      <Grid container spacing={8}>
+        { renderDeck() }
+      </Grid>
+    </Paper>
 
-        <div>
-          <label>
-            this is a deck
-          </label>
-        </div>
-      </main>
-    </div>
+
   );
 }

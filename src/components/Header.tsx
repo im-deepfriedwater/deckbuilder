@@ -1,21 +1,26 @@
-// "use-server"
-// import Link from "next/link";
-// import { getServerSession } from "next-auth";
-// import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-// import UserInfo from "./UserInfo";
+import Link from "next/link";
+import { auth } from "@/auth";
+import { SignOutButton } from "./SignOutButton";
 
-// export default async function Header() {
-//   const session = await getServerSession(authOptions);
-//   return (
-//     <header>
-//       <Link href="/" className="logo">
-//         <img src="/friendly-eats.svg" alt="FriendlyEats" />
-//         Unfriendly Eats
-//       </Link>
+export default async function Header() {
+  const session = await auth()
+  return (
+    <header className="flex flew-row justify-between align-middle">
+      <div>
+        <Link href="/decks" className="logo">
+          <h1 className="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl dark:text-white">
+            Deckbuilder
+          </h1>
+        </Link>
 
-//       <div className="profile">
-//         <UserInfo session={session} />
-//       </div>
-//     </header>
-//   );
-// }
+      </div>
+
+      <div className="flex flex-row self-start justify-between gap-3 align-middle justify-self-center">
+        <div>
+          <label className="align-middle">Signed in as {session?.user?.email}</label>
+        </div>
+        <SignOutButton />
+      </div>
+    </header>
+  );
+}

@@ -1,18 +1,15 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+'use server'
+import { getFirestore } from "firebase-admin/firestore";
 
-import {
-	collection,
-	onSnapshot,
-	query,
-	getDocs,
-	doc,
-	getDoc,
-	updateDoc,
-	orderBy,
-	Timestamp,
-	runTransaction,
-	where,
-	addDoc,
-	getFirestore,
-} from "firebase/firestore";
+export const getDecks = async () => {
+  const firestore = getFirestore();
+  const decksSnapshot = await firestore.collection("decks").get();
+  const documents = decksSnapshot.docs.map((deck) => ({
+    id: deck.id,
+    name: deck.data().name,
+    deckList: deck.data().deckList,
+    lastUpdated: deck.data().desc,
+  }));
 
+  return documents;
+};
