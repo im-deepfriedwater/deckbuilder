@@ -7,18 +7,18 @@ type DeckProps = Omit<Deck, 'id'>
 
 const DeckCard = ({ name, deckList, lastUpdated }: DeckProps) => {
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   const handleClick = async () => {
     await navigator.clipboard.writeText(deckList)
     setOpen((prev) => !prev)
-  };
+  }
 
   const handleClickAway = () => {
     setOpen(false)
-  };
+  }
 
-  if (!name || !deckList || !lastUpdated) return (<></>)
+  if (!name || !deckList ) return (<></>)
 
   return (
     <Grid size={8}>
