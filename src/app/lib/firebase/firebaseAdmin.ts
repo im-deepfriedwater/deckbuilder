@@ -10,6 +10,7 @@ interface FirebaseAdminAppParams {
 }
 
 function formatPrivateKey(key: string) {
+  if (!key) return ''
   return key.replace(/\\n/g, "\n");
 }
 
