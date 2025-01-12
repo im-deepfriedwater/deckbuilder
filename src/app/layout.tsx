@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/components/Header";
 
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -19,7 +18,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: 'Deckbuilder',
-  description: 'A useful way to create and manage TCG decks',
+  description: 'Create, manage, retrieve TCG decks across all your devices',
 };
 
 const Layout = async ({
@@ -31,7 +30,6 @@ const Layout = async ({
   return (
     <html lang="en">
       <body>
-        <Header />
         {children}
       </body>
     </html>
