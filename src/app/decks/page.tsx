@@ -9,7 +9,7 @@ import { Deck } from '@/types'
 import DeckCard from '@/components/DeckCard'
 
 export default async function Decks() {
-  // await initAdmin()
+  await initAdmin()
   // const decks = await getDecks()
 
   // const renderDeck = () => decks.length > 0 ? (<></>) : decks.map(({ name, deckList, lastUpdated, id }: Deck) => (
