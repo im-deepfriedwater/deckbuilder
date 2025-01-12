@@ -6,6 +6,7 @@ import { useState } from "react"
 type DeckProps = Omit<Deck, 'id'>
 
 const DeckCard = ({ name, deckList, lastUpdated }: DeckProps) => {
+
   const [open, setOpen] = useState(false);
 
   const handleClick = async () => {
@@ -16,6 +17,8 @@ const DeckCard = ({ name, deckList, lastUpdated }: DeckProps) => {
   const handleClickAway = () => {
     setOpen(false)
   };
+
+  if (!name || !deckList || !lastUpdated) return (<></>)
 
   return (
     <Grid size={8}>

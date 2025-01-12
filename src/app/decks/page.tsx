@@ -15,7 +15,7 @@ export default async function Decks() {
   const decks = await getDecks();
 
   const renderDeck = () => decks.map(({ name, deckList, lastUpdated, id }: Deck) => (
-    <DeckCard key={id} name={name} deckList={deckList} lastUpdated={lastUpdated} />
+    <DeckCard key={id ?? undefined} name={name} deckList={deckList} lastUpdated={lastUpdated} />
   ))
 
   return (
@@ -24,7 +24,5 @@ export default async function Decks() {
         { renderDeck() }
       </Grid>
     </Paper>
-
-
-  );
+  )
 }
