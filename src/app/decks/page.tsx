@@ -13,7 +13,7 @@ export default async function Decks() {
   const decks = await getDecks()
 
   const renderDecks = () => decks.map(({ name, deckList, lastUpdated, id }: Deck) => (
-    <DeckCard key={id ?? undefined} name={name} deckList={deckList} lastUpdated={lastUpdated} />
+    <DeckCard key={id ?? undefined} name={name} deckList={deckList.replaceAll(' ', '\n')} lastUpdated={lastUpdated} />
   ))
 
   return (
