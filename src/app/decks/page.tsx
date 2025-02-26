@@ -7,6 +7,7 @@ import { initAdmin } from '../lib/firebase/firebaseAdmin'
 import { getDecks } from '../lib/firebase/firestore'
 import { Deck } from '@/types'
 import DeckCard from '@/components/DeckCard'
+import UploadModal from '@/components/UploadModal'
 
 export default async function Decks() {
   await initAdmin()
@@ -18,6 +19,7 @@ export default async function Decks() {
 
   return (
     <Paper className='m-12 h-[80vh]'>
+      <UploadModal />
       <Grid container spacing={8}>
         { renderDecks() }
       </Grid>

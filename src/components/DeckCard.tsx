@@ -10,7 +10,8 @@ const DeckCard = ({ name, deckList, lastUpdated }: DeckProps) => {
   const [open, setOpen] = useState(false)
 
   const handleClick = async () => {
-    await navigator.clipboard.writeText(deckList)
+    const formattedDeckList = deckList.replaceAll(' ', '\n')
+    await navigator.clipboard.writeText(formattedDeckList)
     setOpen((prev) => !prev)
   }
 

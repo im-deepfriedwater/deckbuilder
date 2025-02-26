@@ -1,0 +1,1 @@
+this is a typing test of the new keyboard i like how clicky it is i hope people dont find this obnoxious LOL
