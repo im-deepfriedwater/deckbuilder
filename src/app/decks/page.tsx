@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use server'
 
-import Grid from '@mui/material/Grid2'
-import Paper from '@mui/material/Paper'
 import { initAdmin } from '../lib/firebase/firebaseAdmin'
 import { getDecks } from '../lib/firebase/firestore'
 import { Deck } from '@/types'
@@ -17,10 +15,11 @@ export default async function Decks() {
   ))
 
   return (
-    <Paper className='m-12 h-[80vh]'>
-      <Grid container spacing={8}>
-        { renderDecks() }
-      </Grid>
-    </Paper>
+    <div className="grid grid-rows-4 grid-flow-col gap-4">
+      {renderDecks()}
+      <div className='fixed '>
+        button
+      </div>
+    </div>
   )
 }
