@@ -19,31 +19,25 @@ const DeckCard = ({ name, deckList, lastUpdated }: DeckProps) => {
     setOpen(false)
   }
 
-  if (!name || !deckList ) return (<></>)
+  if (!name || !deckList) return (<></>)
 
   return (
-    <Grid size={8}>
-      <Card>
-        <CardContent>
-          <div>
-            <label> {name}</label>
-            <label> {lastUpdated} </label>
-            <ClickAwayListener onClickAway={handleClickAway}>
-              <Box sx={{ position: 'relative' }}>
-                <button type="button" onClick={handleClick}>
-                  Copy
-                </button>
-                {open && (
-                  <Box>
-                    Copy successful!
-                  </Box>
-                )}
-              </Box>
-            </ClickAwayListener>
-          </div>
-        </CardContent>
-      </Card>
-    </Grid >
+    <div className="w-16">
+      <label> {name} </label>
+      <label> {lastUpdated} </label>
+      <ClickAwayListener onClickAway={handleClickAway}>
+        <Box sx={{ position: 'relative' }}>
+          <button type="button" onClick={handleClick}>
+            Copy
+          </button>
+          {open && (
+            <Box>
+              Copy successful!
+            </Box>
+          )}
+        </Box>
+      </ClickAwayListener>
+    </div>
   )
 }
 

@@ -31,7 +31,9 @@ const Layout = async ({
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <div className="m-16">
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -17,17 +17,11 @@ export default async function Home() {
           Deckbuilder
         </h1>
 
-        <div>
-          <label>
-            { session ? 'signed in' : 'nope'}
-          </label>
-        </div>
-
         <div className="flex gap-4 items-center flex-col sm:flex-row self-center">
           <SignInButton authLabel='Google'/>
           <SignOutButton />
         </div>
       </main>
     </div>
-  );
+  )
 }
